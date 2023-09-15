@@ -40,8 +40,8 @@ public class Program
         builder.Services.AddDbContext<DbemployeesContext>(options =>
         {
 
-            options.UseSqlServer(builder.Configuration.GetConnectionString("Development")); 
-           // options.UseSqlServer(builder.Configuration.GetConnectionString("Production"));
+           // options.UseSqlServer(builder.Configuration.GetConnectionString("Development")); 
+            options.UseSqlServer(builder.Configuration.GetConnectionString("Production"));
         });
         builder.Services.AddScoped<IDepartmentService, DepartmentService>();
         builder.Services.AddScoped<IEmployeeService, EmployeeService>();
