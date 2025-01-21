@@ -1,12 +1,12 @@
-﻿using Consorcio_Api.Models; 
+﻿using Consorcio_Api.Domain.Models;
 
-namespace Consorcio_Api.Services.Contract
+namespace Consorcio_Api.Application.Interfaces
 {
-    public interface IEmployeeService
+    public interface IEmployee
     {
         Task<List<Employee>> GetList();
         Task<Employee> Get(int IdEmployee);
-       
+
         Task<Employee> Add(Employee model);
 
         Task<bool> Update(Employee model);

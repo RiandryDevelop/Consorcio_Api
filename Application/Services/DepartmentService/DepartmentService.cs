@@ -1,14 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Consorcio_Api.Models;
-using Consorcio_Api.Services.Contract;
+using Consorcio_Api.Application.Interfaces;
+using Consorcio_Api.Domain.Models;
+using Consorcio_Api.Persistence;
 
-namespace Consorcio_Api.Services.Implementation
+namespace Consorcio_Api.Application.Services
 {
-    public class DepartmentService: IDepartmentService
+    public class DepartmentService : IDepartment
     {
-        private readonly DbemployeesContext _dbContext;
+        private readonly ConsorcioDbContext _dbContext;
 
-        public DepartmentService(DbemployeesContext dbContext)
+        public DepartmentService(ConsorcioDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -21,10 +22,11 @@ namespace Consorcio_Api.Services.Implementation
                 list = await _dbContext.Departments.ToListAsync();
                 return list;
 
-            }catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 throw new Exception("My Custom Error Message", ex);
             }
         }
     }
 }
-      
