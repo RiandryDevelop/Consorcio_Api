@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Consorcio_Api.Persistence;
 using Consorcio_Api.Domain.Models;
+using Consorcio_Api.Infrastructure.Persistence;
 
 namespace Consorcio_Api.Presentation.Controllers
 {

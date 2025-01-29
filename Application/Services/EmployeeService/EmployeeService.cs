@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Consorcio_Api.Domain.Models;
-using Consorcio_Api.Persistence;
 using Consorcio_Api.Application.Interfaces;
+using Consorcio_Api.Infrastructure.Persistence;
 
 namespace Consorcio_Api.Application.Services.EmployeeService
 {
